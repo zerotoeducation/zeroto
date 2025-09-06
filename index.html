@@ -10,35 +10,71 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; line-height: 1.4; color: #1f2a44; background: #f9fafb; overflow-x: hidden; }
 
+
+
+
+
     /* HEADER */
 header {
   background: url('zeroto.jpg') center/cover no-repeat;
   color: white;
-  padding: 150px 20px;          /* More padding for vertical space */
+  padding: 10vh 5vw; /* Reduced padding, using viewport units for scalability */
   text-align: center;
-  min-height: 300px;             /* Makes the banner tall on all screens */
+  min-height: 40vh; /* Taller header for better proportion on mobile */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
-  box-shadow: inset 0 0 0 900px rgba(0, 0, 0, 0.); /* Optional: overlay to make text pop */
+  margin-bottom: 1.5rem; /* Reduced margin to minimize gaps */
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.0); /* Adjusted overlay for consistency */
 }
 
-header h1 { 
-  font-size: 3rem;               /* Bigger heading */
-  margin: 10px 0; 
+/* Header title */
+header h1 {
+  font-size: clamp(2rem, 6vw, 2.5rem); /* Responsive font size with clamp */
+  margin: 0.5em 0;
+  line-height: 1.2; /* Tighter line height to reduce vertical gaps */
 }
 
-header p { 
-  font-size: 1.2rem;             /* Larger subtitle for readability */
-  max-width: 400px;              /* Keeps text from stretching too wide */
+/* Header subtitle */
+header p {
+  font-size: clamp(1rem, 4vw, 1.2rem); /* Responsive font size */
+  max-width: 90%; /* Wider on mobile to prevent text wrapping issues */
+  margin: 0 auto; /* Centered with no extra vertical space */
 }
 
-   
+/* Media query for smaller screens (mobile) */
+@media (max-width: 768px) {
+  header {
+    padding: 8vh 4vw; /* Further reduced padding for mobile */
+    min-height: 35vh; /* Slightly shorter for mobile */
+  }
 
+  header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem); /* Smaller heading on mobile */
+  }
 
+  header p {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem); /* Smaller subtitle */
+    max-width: 95%; /* Allow more text width on small screens */
+  }
+}
 
+/* Media query for very small screens (e.g., narrow phones) */
+@media (max-width: 480px) {
+  header {
+    padding: 6vh 3vw; /* Minimal padding for very small screens */
+    min-height: 30vh; /* Compact height */
+  }
+
+  header h1 {
+    font-size: clamp(1.5rem, 4.5vw, 1.8rem); /* Even smaller for narrow screens */
+  }
+
+  header p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+}
 
 
 
