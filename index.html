@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeroto Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.4; color: #1f2a44; background: #f9fafb; overflow-x: hidden; }
+
+    /* HEADER */
+header {
+  background: url('zeroto.jpg') center/cover no-repeat;
+  color: white;
+  padding: 150px 20px;          /* More padding for vertical space */
+  text-align: center;
+  min-height: 400px;             /* Makes the banner tall on all screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.); /* Optional: overlay to make text pop */
+}
+
+header h1 { 
+  font-size: 3rem;               /* Bigger heading */
+  margin: 10px 0; 
+}
+
+header p { 
+  font-size: 1.2rem;             /* Larger subtitle for readability */
+  max-width: 600px;              /* Keeps text from stretching too wide */
+}
+
+   
+
+
+
+
+
+
+
+
+
+ /* SECTION GENERAL */
+    section { 
+      padding: 20px 12px; 
+      max-width: 900px; 
+      margin: 24px auto; /* Standardized margin for consistent section spacing */
+    }
+    section h2 { 
+      text-align: center; 
+      margin-bottom: 16px; /* Increased for better separation from content */
+      color: #2563eb; 
+      font-size: 1.3rem; 
+      font-weight: 600; 
+      position: relative; 
+    }
+    section h2::after { 
+      content: ''; 
+      width: 40px; 
+      height: 2px; 
+      background: #2563eb; 
+      position: absolute; 
+      bottom: -6px; 
+      left: 50%; 
+      transform: translateX(-50%); 
+      border-radius: 2px; 
+    }
+    section p { 
+      text-align: center; 
+      font-size: 0.9rem; 
+      color: #4b5563; 
+      max-width: 700px; 
+      margin: 0 auto 16px; /* Added bottom margin for consistent spacing */
+    }
+
+    
+
+
+
+
+
+
+
+/* SLIDESHOW */
+    .slideshow-container { 
+      max-width: 900px; 
+      position: relative; 
+      margin: 16px auto 24px; /* Adjusted for balanced spacing above and below */
+      border-radius: 10px; 
+      overflow: hidden; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+    }
+    .slides { display: none; animation: fadeIn 0.6s ease-in-out; }
+    .slides img { 
+      width: 100%; 
+      max-height: 360px; 
+      object-fit: contain; 
+      background: #fff; 
+      border-radius: 10px; 
+      padding: 8px; /* Added padding to prevent image edges from touching container */
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .prev, .next {
+      cursor: pointer; 
+      position: absolute; 
+      top: 50%; 
+      transform: translateY(-50%);
+      padding: 8px; 
+      color: white; 
+      font-size: 16px; 
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5); 
+      user-select: none; 
+      transition: 0.3s;
+    }
+    .next { right: 10px; } 
+    .prev { left: 10px; }
+    .prev:hover, .next:hover { background: rgba(0,0,0,0.75); }
+
+    .dots { 
+      text-align: center; 
+      padding: 8px; 
+      background: #fff; 
+      border-radius: 0 0 10px 10px; 
+      margin-top: 8px; /* Added to separate dots from slides */
+    }
+    .dot { 
+      cursor: pointer; 
+      height: 8px; 
+      width: 8px; 
+      margin: 0 4px; 
+      background: #d1d5db; 
+      border-radius: 50%; 
+      display: inline-block; 
+      transition: 0.3s; 
+    }
+    .active, .dot:hover { background: #2563eb; }
+
+    /* HIGHLIGHTS */
+    .highlights { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 12px; /* Slightly increased for better separation */
+      margin-top: 16px; /* Consistent with other section content */
+    }
+    .highlight { 
+      background: #fff; 
+      padding: 16px; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+      text-align: center; 
+    }
+    .highlight i { font-size: 1.4rem; color: #2563eb; margin-bottom: 8px; }
+
+   
+
+
+
+
+
+
+ /* VIDEO */
+    .video { 
+      position: relative; 
+      padding-bottom: 56.25%; 
+      height: 0; 
+      overflow: hidden; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+      margin-top: 16px; /* Consistent with other section content */
+    }
+    .video iframe { 
+      position: absolute; 
+      inset: 0; 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+      border-radius: 10px; 
+    }
+
+    
+
+
+
+
+/* CTA */
+    .cta { 
+      text-align: center; 
+      margin: 24px 0; /* Standardized margin for better spacing */
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 12px; /* Slightly increased for better button separation */
+    }
+    .cta a { 
+      background: linear-gradient(135deg, #2563eb, #60a5fa); 
+      color: #fff; 
+      text-decoration: none; 
+      padding: 10px 18px; 
+      border-radius: 30px; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      transition: 0.2s; 
+    }
+    .cta a:hover { transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+
+    /* ACCORDION */
+    .accordion { 
+      margin-top: 16px; /* Consistent with other section content */
+    }
+    .accordion-item { 
+      background: #fff; 
+      margin-bottom: 12px; /* Increased for better separation between items */
+      border-radius: 8px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+      overflow: hidden; 
+    }
+    .accordion-header { 
+      padding: 12px 16px; 
+      cursor: pointer; 
+      background: #2563eb; 
+      color: #fff; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+    }
+    .accordion-content { 
+      display: none; 
+      padding: 12px 16px; 
+      font-size: 0.9rem; 
+      color: #374151; 
+      background: #f9fafb; 
+    }
+
+   
+
+
+ /* STEPS */
+    .steps { 
+      display: grid; 
+      gap: 12px; /* Slightly increased for better separation */
+      margin-top: 16px; /* Consistent with other section content */
+    }
+    .step { 
+      background: #fff; 
+      padding: 12px; /* Unified padding */
+      border-radius: 8px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      font-size: 0.9rem; 
+    }
+    .step i { font-size: 1.2rem; color: #2563eb; }
+
+    /* FOOTER */
+    footer { 
+      background: #111827; 
+      color: #f3f4f6; 
+      text-align: center; 
+      padding: 18px 12px; 
+      font-size: 0.8rem; 
+      margin-top: 24px; /* Added to separate from last section */
+    }
+    footer .social-links { margin-bottom: 12px; /* Slightly increased for clarity */ }
+    footer .social-links a { color: #f3f4f6; margin: 0 8px; font-size: 1rem; transition: 0.3s; }
+    footer .social-links a:hover { color: #2563eb; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header { padding: 20px 12px; margin-bottom: 16px; /* Adjusted for smaller screens */ }
+      header h1 { font-size: 1.4rem; }
+      section { padding: 16px 12px; margin: 16px auto; /* Reduced margins for mobile */ }
+      section h2 { font-size: 1.1rem; margin-bottom: 12px; }
+      .slideshow-container { margin: 12px auto 16px; }
+      .slides img { max-height: 200px; padding: 6px; /* Adjusted for smaller screens */ }
+      .cta { margin: 16px 0; gap: 8px; }
+      .accordion { margin-top: 12px; }
+      .steps { margin-top: 12px; gap: 8px; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 16px 12px; margin-bottom: 12px; }
+      header h1 { font-size: 1.2rem; }
+      section { padding: 12px 8px; margin: 12px auto; }
+      .slides img { max-height: 160px; padding: 4px; }
+      .cta { margin: 12px 0; }
+      .accordion-item { margin-bottom: 8px; }
+      .steps { gap: 8px; }
+      .video { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    
+  </header>
+
+  
+
+
+
+
+<!-- SLIDESHOW -->
+  <section>
+    <h2>🎓 Degree Tuition</h2>
+    <div class="slideshow-container">
+      <div class="slides"><img src="3rd.jpg" alt="Course 1" /></div>
+      <div class="slides"><img src="2nd1.jpg" alt="Course 2" /></div>
+      <div class="slides"><img src="2nd2.jpg" alt="Course 3" /></div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+
+
+
+
+
+
+
+<!-- ENROLLMENT STEPS -->
+<section style="background: #f5f7fa; padding: 50px 20px; text-align: center; border-radius: 12px; max-width: 600px; margin: 40px auto; box-shadow: 0 8px 20px rgba(0,0,0,0.1); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h2 style="font-size: 2em; color: #333; margin-bottom: 20px;">📝 How to Enroll</h2>
+  <p style="font-size: 1.1em; color: #555; margin-bottom: 30px;">Click the button below to download the complete guide in PDF format and get started today.</p>
+  <div class="cta">
+    <a href="path-to-your-pdf.pdf" download style="display: inline-block; background: #4CAF50; color: #fff; padding: 15px 30px; font-size: 1.1em; border-radius: 8px; text-decoration: none; transition: background 0.3s, transform 0.3s;">
+      📄 Download PDF
+    </a>
+  </div>
+</section>
+
+<!-- Optional: Hover effect -->
+<style>
+  .cta a:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+  }
+</style>
+
+ 
+
+  
+
+
+<!-- PAYMENT -->
+  <section>
+    <h2>💳 Pay via UPI</h2>
+    <p>Scan QR or click the button below</p>
+    <div style="text-align:center; margin: 16px 0;">
+      <img src="qr.jpeg" alt="UPI QR" width="380" />
+    </div>
+    <div class="cta">
+      <a href="upi://pay?pa=zerotoeducationofficial@oksbi&pn=Zeroto%20Education&am=149&cu=INR">💳 Pay ₹149 Now</a>
+    </div>
+  </section>
+
+
+      
+
+
+
+
+
+<section class="curriculum">
+  <h2>📚 Complete Curriculum</h2>
+
+  <!-- Generate 8 semesters -->
+  <div id="curriculum-container"></div>
+</section>
+
+<script>
+  const semesters = [
+    {
+      name: "Semester 1",
+      subjects: [
+        { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1" },
+        { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2" },
+        { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3" },
+        { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4" },
+      ]
+    },
+    {
+      name: "Semester 2",
+      subjects: [
+        { name: "📘 Advanced Accounting", link: "https://t.me/ZerotoRequestbot5" },
+        { name: "📗 Business Management", link: "https://t.me/ZerotoRequestbot6" },
+        { name: "📕 Marketing Basics", link: "https://t.me/ZerotoRequestbot7" },
+        { name: "📙 Corporate Finance", link: "https://t.me/ZerotoRequestbot8" },
+      ]
+    },
+    {
+      name: "Semester 3",
+      subjects: [
+        { name: "📘 Financial Reporting", link: "https://t.me/ZerotoRequestbot9" },
+        { name: "📗 Business Law", link: "https://t.me/ZerotoRequestbot10" },
+        { name: "📕 Taxation", link: "https://t.me/ZerotoRequestbot11" },
+        { name: "📙 Investment Analysis", link: "https://t.me/ZerotoRequestbot12" },
+      ]
+    },
+    {
+      name: "Semester 4",
+      subjects: [
+        { name: "📘 Auditing", link: "https://t.me/ZerotoRequestbot13" },
+        { name: "📗 Human Resource Management", link: "https://t.me/ZerotoRequestbot14" },
+        { name: "📕 Organizational Behavior", link: "https://t.me/ZerotoRequestbot15" },
+        { name: "📙 Cost Accounting", link: "https://t.me/ZerotoRequestbot16" },
+      ]
+    },
+    {
+      name: "Semester 5",
+      subjects: [
+        { name: "📘 Strategic Management", link: "https://t.me/ZerotoRequestbot17" },
+        { name: "📗 International Business", link: "https://t.me/ZerotoRequestbot18" },
+        { name: "📕 Business Ethics", link: "https://t.me/ZerotoRequestbot19" },
+        { name: "📙 Financial Markets", link: "https://t.me/ZerotoRequestbot20" },
+      ]
+    },
+    {
+      name: "Semester 6",
+      subjects: [
+        { name: "📘 Entrepreneurship", link: "https://t.me/ZerotoRequestbot21" },
+        { name: "📗 E-Commerce", link: "https://t.me/ZerotoRequestbot22" },
+        { name: "📕 Business Analytics", link: "https://t.me/ZerotoRequestbot23" },
+        { name: "📙 Project Management", link: "https://t.me/ZerotoRequestbot24" },
+      ]
+    },
+    {
+      name: "Semester 7",
+      subjects: [
+        { name: "📘 Leadership Skills", link: "https://t.me/ZerotoRequestbot25" },
+        { name: "📗 Negotiation Skills", link: "https://t.me/ZerotoRequestbot26" },
+        { name: "📕 Risk Management", link: "https://t.me/ZerotoRequestbot27" },
+        { name: "📙 Business Communication", link: "https://t.me/ZerotoRequestbot28" },
+      ]
+    },
+    {
+      name: "Semester 8",
+      subjects: [
+        { name: "📘 Capstone Project", link: "https://t.me/ZerotoRequestbot29" },
+        { name: "📗 Advanced Finance", link: "https://t.me/ZerotoRequestbot30" },
+        { name: "📕 Market Research", link: "https://t.me/ZerotoRequestbot31" },
+        { name: "📙 Global Economics", link: "https://t.me/ZerotoRequestbot32" },
+      ]
+    },
+  ];
+
+  const container = document.getElementById("curriculum-container");
+
+  semesters.forEach((sem, semIndex) => {
+    const semDiv = document.createElement("div");
+    semDiv.className = "semester";
+
+    const title = document.createElement("h3");
+    title.className = "semester-title";
+    title.textContent = `${sem.name} ▸`;
+    semDiv.appendChild(title);
+
+    const content = document.createElement("div");
+    content.className = "semester-content";
+
+    sem.subjects.forEach((sub, subIndex) => {
+      const row = document.createElement("div");
+      row.className = "course-row";
+
+      const name = document.createElement("span");
+      name.className = "course-name";
+      name.textContent = sub.name;
+
+      const openBtn = document.createElement("a");
+      openBtn.href = sub.link;
+      openBtn.target = "_blank";
+      openBtn.className = "btn btn-big open-btn";
+      openBtn.textContent = "Open in Telegram";
+
+      const linkSpan = document.createElement("span");
+      linkSpan.className = "course-link";
+      linkSpan.textContent = sub.link;
+
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "btn btn-big copy-btn";
+      copyBtn.textContent = "Copy Link";
+      copyBtn.onclick = () => copyLink(copyBtn);
+
+      row.appendChild(name);
+      row.appendChild(openBtn);
+      row.appendChild(linkSpan);
+      row.appendChild(copyBtn);
+
+      content.appendChild(row);
+    });
+
+    semDiv.appendChild(content);
+    container.appendChild(semDiv);
+  });
+
+  // Hide all semester content initially
+  document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
+
+  // Add accordion toggle
+  document.addEventListener("click", e => {
+    if(e.target.classList.contains('semester-title')){
+      const content = e.target.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      e.target.textContent = e.target.textContent.includes('▸') 
+        ? e.target.textContent.replace('▸','▾') 
+        : e.target.textContent.replace('▾','▸');
+    }
+  });
+
+  function copyLink(button) {
+    const link = button.parentElement.querySelector('.course-link').textContent;
+    navigator.clipboard.writeText(link).then(() => {
+      const original = button.textContent;
+      button.textContent = "Copied!";
+      button.classList.add("copied");
+      setTimeout(()=>{ button.textContent = original; button.classList.remove("copied"); },1500);
+    });
+  }
+</script>
+
+<style>
+  .curriculum {
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    padding: 0 15px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2.2em;
+    font-weight: 700;
+  }
+
+  .semester {
+    margin-bottom: 25px;
+  }
+
+  .semester-title {
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+    background: linear-gradient(90deg,#3498db,#9b59b6);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.3s;
+    user-select: none;
+  }
+
+  .semester-title:hover {
+    background: linear-gradient(90deg,#2980b9,#8e44ad);
+  }
+
+  .semester-content {
+    margin-top: 10px;
+  }
+
+  .course-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #f5f6fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    min-width: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .course-row:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+
+  .course-name {
+    flex: 0 0 200px;
+    font-weight: 600;
+    color: #2c3e50;
+    white-space: nowrap;
+  }
+
+  .course-link {
+    flex: 1 1 auto;
+    font-size: 0.85em;
+    color: #7f8c8d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .btn {
+    padding: 5px 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0;
+    line-height: 1.2em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-big {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+  }
+
+  .open-btn {
+    background: linear-gradient(90deg,#1abc9c,#16a085);
+  }
+  .open-btn:hover {
+    background: linear-gradient(90deg,#16a085,#1abc9c);
+  }
+
+  .copy-btn {
+    background: linear-gradient(90deg,#e67e22,#d35400);
+  }
+  .copy-btn:hover {
+    background: linear-gradient(90deg,#d35400,#e67e22);
+  }
+  .copy-btn.copied {
+    background: linear-gradient(90deg,#f1c40f,#f39c12);
+  }
+
+  @media(max-width: 700px){
+    .course-name { flex: 0 0 140px; font-size:0.85em; }
+    .course-link { font-size:0.75em; }
+    .btn-big { padding:8px 15px; font-size:0.9em; }
+  }
+  @media(max-width: 500px){
+    .course-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .course-name { flex: none; }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Button + Card Style -->
+<style>
+  .course-topic {
+    max-width: 280px;
+    margin: 12px auto;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .course-topic h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .btn {
+    display: inline-block;
+    width: 90%;
+    margin: 6px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+
+  .buy-btn {
+    background: #007bff;
+  }
+  .buy-btn:hover {
+    background: #0056b3;
+  }
+
+  .share-btn {
+    background: #28a745;
+  }
+  .share-btn:hover {
+    background: #1e7e34;
+  }
+</style>
+
+
+
+
+  <!-- DEMO VIDEO -->
+  <section>
+    <h2>🎥 Demo Lecture</h2>
+  <div class="video">
+      <iframe src="https://www.youtube.com/embed/CeqNZayqsVk
+" title="Demo Lecture" allowfullscreen></iframe>
+    </div>
+  </section>  
+
+<section>
+<div class="video">
+      <iframe src="https://www.youtube.com/embed/uUPOkuZFyXs" title="Demo Lecture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  
+
+<!-- STUDENT REVIEWS -->
+  <section>
+    <h2>💬 Student Reviews</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/4v1ufxh4os4" title="Student Review" allowfullscreen></iframe>
+    </div>
+  </section>
+
+ <section>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/4v1ufxh4os4" title="Student Review" allowfullscreen></iframe>
+    </div>
+  </section>
+
+ 
+
+
+
+
+
+
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/zerotoeducation/?__pwa=1"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@Zeroto_education"><i class="fab fa-youtube"></i></a>
+      <a href="https://t.me/Zerotoeducationofficial"><i class="fab fa-telegram-plane"></i></a>
+    </div>
+    <p>&copy; 2025 Zeroto Education. All rights reserved.</p>
+  </footer>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- SCRIPT -->
+  <script>
+    let slideIndex = 1;
+    function showSlide(n) {
+      const slides = document.getElementsByClassName('slides');
+      const dots = document.getElementsByClassName('dot');
+      if (n > slides.length) slideIndex = 1;
+      else if (n < 1) slideIndex = slides.length;
+      else slideIndex = n;
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = 'none';
+      for (let i = 0; i < dots.length; i++) dots[i].classList.remove('active');
+      slides[slideIndex - 1].style.display = 'block';
+      dots[slideIndex - 1].classList.add('active');
+    }
+    function plusSlides(n) { showSlide(slideIndex += n); }
+    function currentSlide(n) { showSlide(slideIndex = n); }
+    function autoAdvance() { setInterval(() => { plusSlides(1); }, 4000); }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(slideIndex);
+      autoAdvance();
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
