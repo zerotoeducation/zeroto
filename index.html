@@ -607,9 +607,22 @@ header p {
         </video>
       </div>
       <div class="cta" style="display: flex; flex-direction: column; gap: 8px;">
-        <a href="pdf.pdf" download style="display: inline-block; background: #4CAF50; color: #fff; padding: 8px 16px; font-size: 0.9em; border-radius: 5px; text-decoration: none; transition: background 0.3s, transform 0.3s;">
-          📄 Download PDF
-        </a>
+        <!-- View in browser -->
+<a href="pdf.pdf" target="_blank"
+   style="display:inline-block;background:#2196F3;color:#fff;
+          padding:8px 16px;border-radius:5px;text-decoration:none;
+          font-size:0.9em;margin-right:10px;">
+  👀 View PDF
+</a>
+
+<!-- Force download -->
+<a href="pdf.pdf" download
+   style="display:inline-block;background:#4CAF50;color:#fff;
+          padding:8px 16px;border-radius:5px;text-decoration:none;
+          font-size:0.9em;">
+  📄 Download PDF
+</a>
+
         <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 6px; background: #0088cc; color: #fff; padding: 8px 16px; font-size: 0.9em; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.3s;">
           <img src="logo.png" alt="Telegram" width="24" height="24" />
           Download Telegram
@@ -654,6 +667,10 @@ header p {
     <div class="video">
       <iframe src="https://www.youtube.com/embed/4v1ufxh4os4" title="Student Review" allowfullscreen></iframe>
     </div>
+<div class="video">
+      <iframe src="https://www.youtube.com/shorts/Wh_shkuJ9Go" title="Student Review" allowfullscreen></iframe>
+    </div>
+
   </section>
 
   <!-- REVIEWS SECTION -->
@@ -1000,4 +1017,3 @@ function copyLink(button) {
   </script>
 </body>
 </html>
-
