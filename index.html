@@ -3,50 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zeroto Education</title>
+  <meta name="description" content="Zeroto Education offers online degree tuition with expert-led courses, interactive lessons, and comprehensive resources to help you succeed." />
+  <!-- Open Graph Meta Tags for WhatsApp and Social Media -->
+  <meta property="og:title" content="Zeroto Education - Online Degree Tuition" />
+  <meta property="og:description" content="Join Zeroto Education for expert-led online courses, interactive lessons, and comprehensive resources to excel in your degree." />
+  <meta property="og:image" content="https://yourdomain.com/thumbnail.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zeroto Education" />
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zeroto Education - Online Degree Tuition" />
+  <meta name="twitter:description" content="Join Zeroto Education for expert-led online courses, interactive lessons, and comprehensive resources to excel in your degree." />
+  <meta name="twitter:image" content="https://yourdomain.com/thumbnail.jpg" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>Zeroto Education - Online Degree Tuition</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; line-height: 1.4; color: #1f2a44; background: #f9fafb; overflow-x: hidden; }
 
-  /* HEADER / HERO BANNER */
-header {
-  background: url('newbanner1.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  min-height: 70vh;           /* make it a real hero section */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding: 0 2rem;
-}
+    /* HEADER / HERO BANNER */
+    header {
+      background: url('newbanner1.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding: 0 2rem;
+    }
 
-/* Dark overlay for text readability */
-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.0);
-}
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.0);
+    }
 
-/* Keep text above overlay */
-header * {
-  position: relative;
-  z-index: 1;
-}
+    header * {
+      position: relative;
+      z-index: 1;
+    }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-header p {
-  font-size: 1.25rem;
-}
+    header p {
+      font-size: 1.25rem;
+    }
 
     @media (max-width: 768px) {
       header {
@@ -121,7 +134,7 @@ header p {
     .slides { display: none; animation: fadeIn 0.6s ease-in-out; }
     .slides img {
       width: 100%;
-      max-height: 300px;
+      max-height: 400px;
       object-fit: contain;
       background: #fff;
       border-radius: 10px;
@@ -169,22 +182,6 @@ header p {
       .slides img { max-height: 140px; padding: 4px; }
     }
 
-    /* HIGHLIGHTS */
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .highlight {
-      background: #fff;
-      padding: 12px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    .highlight i { font-size: 1.2rem; color: #2563eb; margin-bottom: 6px; }
-
     /* VIDEO */
     .video {
       position: relative;
@@ -227,64 +224,6 @@ header p {
       transition: 0.2s;
     }
     .cta a:hover { transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
-
-    /* ACCORDION */
-    .accordion {
-      margin-top: 12px;
-    }
-    .accordion-item {
-      background: #fff;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      overflow: hidden;
-    }
-    .accordion-header {
-      padding: 10px 14px;
-      cursor: pointer;
-      background: #2563eb;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-    .accordion-content {
-      display: none;
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      color: #374151;
-      background: #f9fafb;
-    }
-
-    /* STEPS */
-    .steps {
-      display: grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .step {
-      background: #fff;
-      padding: 10px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-    }
-    .step i { font-size: 1.1rem; color: #2563eb; }
-
-    /* FOOTER */
-    footer {
-      background: #111827;
-      color: #f3f4f6;
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 0.75rem;
-      margin-top: 20px;
-    }
-    footer .social-links { margin-bottom: 10px; }
-    footer .social-links a { color: #f3f4f6; margin: 0 6px; font-size: 0.9rem; transition: 0.3s; }
-    footer .social-links a:hover { color: #2563eb; }
 
     /* CURRICULUM */
     .curriculum {
@@ -363,27 +302,6 @@ header p {
       .course-video iframe { width: 100%; height: 180px; }
     }
 
-    /* BUTTON + CARD STYLE */
-    .course-topic {
-      max-width: 260px;
-      margin: 10px auto;
-      padding: 12px;
-      text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #f9f9f9;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .course-topic h3 {
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #333;
-    }
-    .buy-btn { background: #007bff; }
-    .buy-btn:hover { background: #0056b3; }
-    .share-btn { background: #28a745; }
-    .share-btn:hover { background: #1e7e34; }
-
     /* REVIEWS SECTION */
     .reviews {
       max-width: 900px;
@@ -392,9 +310,11 @@ header p {
       background: linear-gradient(135deg, #e8f1ff, #fafcff);
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      position: relative;
     }
     .review-card {
-      flex: 0 0 100%;
+      flex: 0 0 140px;
+      min-width: 140px;
       padding: 8px;
       border-radius: 6px;
       background: #ffffff;
@@ -481,6 +401,10 @@ header p {
       outline: none;
       transition: border-color 0.3s, box-shadow 0.3s;
     }
+    #reviewForm input:focus, #reviewForm textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    }
     #reviewForm textarea { height: 60px; resize: none; }
     #reviewForm button {
       padding: 8px 16px;
@@ -512,6 +436,7 @@ header p {
       #reviews::-webkit-scrollbar { display: none; }
       .review-card {
         flex: 0 0 calc(100% - 20px);
+        min-width: calc(100% - 20px);
         margin: 0 10px;
       }
       #prevReview, #nextReview {
@@ -524,7 +449,7 @@ header p {
       #reviewForm button { font-size: 0.8rem; padding: 7px 14px; }
     }
     @media (min-width: 769px) {
-      .review-card { flex: 0 0 140px; }
+      .review-card { flex: 0 0 140px; min-width: 140px; }
     }
 
     /* CONTACT SECTION */
@@ -568,6 +493,97 @@ header p {
       .contact { margin: 15px 10px; padding: 10px; }
       .contact a { width: 180px; font-size: 0.85rem; }
     }
+
+    /* FOOTER */
+    footer {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 20px 12px;
+      background: linear-gradient(135deg, #e8f1ff, #fafcff);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-links a.instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+    .social-links a.youtube {
+      background: linear-gradient(90deg, #ff0000, #cc0000);
+    }
+    .social-links a.telegram {
+      background: linear-gradient(90deg, #0088cc, #0077b5);
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .social-links a:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    footer p {
+      font-size: 0.85rem;
+      color: #4b5563;
+      font-weight: 300;
+      position: relative;
+      padding-top: 15px;
+    }
+    footer p::before {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: #d1d5db;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media (max-width: 768px) {
+      footer {
+        margin: 15px 10px 0;
+        padding: 15px 10px;
+      }
+      .social-links a {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+      footer p {
+        font-size: 0.8rem;
+      }
+    }
+    @media (max-width: 480px) {
+      footer {
+        margin: 10px 8px 0;
+        padding: 12px 8px;
+      }
+      .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+      }
+      .social-links {
+        gap: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -584,13 +600,13 @@ header p {
       <div class="slides"><img src="3rd.jpg" alt="Course 1" /></div>
       <div class="slides"><img src="2nd1.jpg" alt="Course 2" /></div>
       <div class="slides"><img src="2nd2.jpg" alt="Course 3" /></div>
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
+      <a class="prev" onclick="plusSlides(-1)" aria-label="Previous Slide">❮</a>
+      <a class="next" onclick="plusSlides(1)" aria-label="Next Slide">❯</a>
     </div>
     <div class="dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(1)" aria-label="Slide 1"></span>
+      <span class="dot" onclick="currentSlide(2)" aria-label="Slide 2"></span>
+      <span class="dot" onclick="currentSlide(3)" aria-label="Slide 3"></span>
     </div>
   </section>
 
@@ -607,22 +623,8 @@ header p {
         </video>
       </div>
       <div class="cta" style="display: flex; flex-direction: column; gap: 8px;">
-        <!-- View in browser -->
-<a href="pdf.pdf" target="_blank"
-   style="display:inline-block;background:#2196F3;color:#fff;
-          padding:8px 16px;border-radius:5px;text-decoration:none;
-          font-size:0.9em;margin-right:10px;">
-  👀 View PDF
-</a>
-
-<!-- Force download -->
-<a href="pdf.pdf" download
-   style="display:inline-block;background:#4CAF50;color:#fff;
-          padding:8px 16px;border-radius:5px;text-decoration:none;
-          font-size:0.9em;">
-  📄 Download PDF
-</a>
-
+        <a href="pdf.pdf" target="_blank" style="display:inline-block;background:#2196F3;color:#fff;padding:8px 16px;border-radius:5px;text-decoration:none;font-size:0.9em;margin-right:10px;">👀 View PDF</a>
+        <a href="join.pdf" download style="display:inline-block;background:#4CAF50;color:#fff;padding:8px 16px;border-radius:5px;text-decoration:none;font-size:0.9em;">📄 Download PDF</a>
         <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 6px; background: #0088cc; color: #fff; padding: 8px 16px; font-size: 0.9em; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.3s;">
           <img src="logo.png" alt="Telegram" width="24" height="24" />
           Download Telegram
@@ -648,7 +650,7 @@ header p {
   </section>
 
   <!-- COURSES -->
-  <section class="courses">
+  <section class="curriculum">
     <h2>📚 Complete Courses</h2>
     <div id="curriculum-container"></div>
   </section>
@@ -667,24 +669,23 @@ header p {
     <div class="video">
       <iframe src="https://www.youtube.com/embed/4v1ufxh4os4" title="Student Review" allowfullscreen></iframe>
     </div>
-<div class="video">
-      <iframe src="https://www.youtube.com/shorts/Wh_shkuJ9Go" title="Student Review" allowfullscreen></iframe>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/Wh_shkuJ9Go" title="Review" allowfullscreen></iframe>
     </div>
-
   </section>
 
   <!-- REVIEWS SECTION -->
   <section class="reviews">
     <h2>🌟 What Our Students Say</h2>
     <form id="reviewForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <textarea id="review" placeholder="Share your experience..." required></textarea>
-      <button type="submit">✨ Submit</button>
+      <input type="text" id="name" placeholder="Your Name" required aria-label="Your Name" />
+      <textarea id="review" placeholder="Share your experience..." required aria-label="Your Review"></textarea>
+      <button type="submit" aria-label="Submit Review">✨ Submit</button>
     </form>
     <div style="position: relative; margin-top: 15px; overflow: hidden;">
       <div id="reviews"></div>
-      <button id="prevReview">&lt;</button>
-      <button id="nextReview">&gt;</button>
+      <button id="prevReview" aria-label="Previous Review">&lt;</button>
+      <button id="nextReview" aria-label="Next Review">&gt;</button>
     </div>
   </section>
 
@@ -693,10 +694,10 @@ header p {
     <h2>📞 Contact Us</h2>
     <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 15px;">Reach out to us for any queries or support!</p>
     <div class="cta">
-      <a href="https://wa.me/9495261052" target="_blank" class="whatsapp">
+      <a href="https://wa.me/9495261052" target="_blank" class="whatsapp" aria-label="Contact via WhatsApp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a href="https://t.me/Zerotoeducationofficial" target="_blank" class="telegram">
+      <a href="https://t.me/Zerotoeducationofficial" target="_blank" class="telegram" aria-label="Contact via Telegram">
         <i class="fab fa-telegram-plane"></i> Telegram
       </a>
     </div>
@@ -705,9 +706,15 @@ header p {
   <!-- FOOTER -->
   <footer>
     <div class="social-links">
-      <a href="https://www.instagram.com/zerotoeducation/?__pwa=1"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@Zeroto_education"><i class="fab fa-youtube"></i></a>
-      <a href="https://t.me/Zerotoeducationofficial"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.instagram.com/zerotoeducation/?__pwa=1" class="instagram" aria-label="Follow us on Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@Zeroto_education" class="youtube" aria-label="Subscribe to our YouTube channel">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://t.me/Zerotoeducationofficial" class="telegram" aria-label="Join our Telegram community">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
     </div>
     <p>&copy; 2025 Zeroto Education. All rights reserved.</p>
   </footer>
@@ -731,136 +738,184 @@ header p {
     function currentSlide(n) { showSlide(slideIndex = n); }
     function autoAdvance() { setInterval(() => { plusSlides(1); }, 4000); }
 
-   // Courses Accordion
-const semesters = [
-  {
-    name: "Semester 1",
-    subjects: [
-      { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
-      { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
-      { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
-      { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-    ]
-  },
-  {
-    name: "Semester 2",
-    subjects: [
-      { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
-      { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
-      { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
-      { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-    ]
-  }
-];
+    // Courses Accordion
+    const semesters = [
+      {
+        name: "Semester 1",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 2",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 3",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 4",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 5",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 6",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 7",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      },
+      {
+        name: "Semester 8",
+        subjects: [
+          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+        ]
+      }
+    ];
 
-const container = document.getElementById("curriculum-container");
+    const container = document.getElementById("curriculum-container");
 
-semesters.forEach((sem) => {
-  const semDiv = document.createElement("div");
-  semDiv.className = "semester";
+    semesters.forEach((sem) => {
+      const semDiv = document.createElement("div");
+      semDiv.className = "semester";
 
-  const title = document.createElement("h3");
-  title.className = "semester-title";
-  title.textContent = `${sem.name} ▸`;
-  semDiv.appendChild(title);
+      const title = document.createElement("h3");
+      title.className = "semester-title";
+      title.textContent = `${sem.name} ▸`;
+      semDiv.appendChild(title);
 
-  const content = document.createElement("div");
-  content.className = "semester-content";
+      const content = document.createElement("div");
+      content.className = "semester-content";
 
-  sem.subjects.forEach((sub) => {
-    const row = document.createElement("div");
-    row.className = "course-row";
+      sem.subjects.forEach((sub) => {
+        const row = document.createElement("div");
+        row.className = "course-row";
 
-    // subject heading
-    const subHeading = document.createElement("h4");
-    subHeading.className = "subject-title";
-    subHeading.textContent = `${sub.name} ▸`;
+        const subHeading = document.createElement("h4");
+        subHeading.className = "subject-title";
+        subHeading.textContent = `${sub.name} ▸`;
 
-    // hidden subject details
-    const subContent = document.createElement("div");
-    subContent.className = "subject-content";
+        const subContent = document.createElement("div");
+        subContent.className = "subject-content";
 
-    const info = document.createElement("div");
-    info.className = "course-info";
+        const info = document.createElement("div");
+        info.className = "course-info";
 
-    const openBtn = document.createElement("a");
-    openBtn.href = sub.link;
-    openBtn.target = "_blank";
-    openBtn.className = "btn btn-big open-btn";
-    openBtn.textContent = "Open in Telegram";
+        const openBtn = document.createElement("a");
+        openBtn.href = sub.link;
+        openBtn.target = "_blank";
+        openBtn.className = "btn btn-big open-btn";
+        openBtn.textContent = "Open in Telegram";
 
-    const linkSpan = document.createElement("span");
-    linkSpan.className = "course-link";
-    linkSpan.textContent = sub.link;
+        const linkSpan = document.createElement("span");
+        linkSpan.className = "course-link";
+        linkSpan.textContent = sub.link;
 
-    const copyBtn = document.createElement("button");
-    copyBtn.className = "btn btn-big copy-btn";
-    copyBtn.textContent = "Copy Link";
-    copyBtn.onclick = () => copyLink(copyBtn);
+        const copyBtn = document.createElement("button");
+        copyBtn.className = "btn btn-big copy-btn";
+        copyBtn.textContent = "Copy Link";
+        copyBtn.onclick = () => copyLink(copyBtn);
 
-    info.appendChild(openBtn);
-    info.appendChild(linkSpan);
-    info.appendChild(copyBtn);
+        info.appendChild(openBtn);
+        info.appendChild(linkSpan);
+        info.appendChild(copyBtn);
 
-    subContent.appendChild(info);
+        subContent.appendChild(info);
 
-    if (sub.demo) {
-      const videoDiv = document.createElement("div");
-      videoDiv.className = "course-video";
-      const iframe = document.createElement("iframe");
-      iframe.width = "240";
-      iframe.height = "135";
-      iframe.src = sub.demo;
-      iframe.frameBorder = "0";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.allowFullscreen = true;
-      videoDiv.appendChild(iframe);
-      subContent.appendChild(videoDiv);
+        if (sub.demo) {
+          const videoDiv = document.createElement("div");
+          videoDiv.className = "course-video";
+          const iframe = document.createElement("iframe");
+          iframe.width = "240";
+          iframe.height = "135";
+          iframe.src = sub.demo;
+          iframe.frameBorder = "0";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+          videoDiv.appendChild(iframe);
+          subContent.appendChild(videoDiv);
+        }
+
+        row.appendChild(subHeading);
+        row.appendChild(subContent);
+        content.appendChild(row);
+      });
+
+      semDiv.appendChild(content);
+      container.appendChild(semDiv);
+    });
+
+    document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
+    document.querySelectorAll('.subject-content').forEach(c => c.style.display = 'none');
+
+    document.addEventListener("click", e => {
+      if (e.target.classList.contains('semester-title')) {
+        const content = e.target.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        e.target.textContent = e.target.textContent.includes('▸') 
+          ? e.target.textContent.replace('▸', '▾') 
+          : e.target.textContent.replace('▾', '▸');
+      }
+
+      if (e.target.classList.contains('subject-title')) {
+        const content = e.target.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        e.target.textContent = e.target.textContent.includes('▸') 
+          ? e.target.textContent.replace('▸', '▾') 
+          : e.target.textContent.replace('▾', '▸');
+      }
+    });
+
+    function copyLink(button) {
+      const link = button.parentElement.querySelector('.course-link').textContent;
+      navigator.clipboard.writeText(link).then(() => {
+        const original = button.textContent;
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1500);
+      });
     }
-
-    row.appendChild(subHeading);
-    row.appendChild(subContent);
-    content.appendChild(row);
-  });
-
-  semDiv.appendChild(content);
-  container.appendChild(semDiv);
-});
-
-// hide everything by default
-document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
-document.querySelectorAll('.subject-content').forEach(c => c.style.display = 'none');
-
-// toggle semester
-document.addEventListener("click", e => {
-  if (e.target.classList.contains('semester-title')) {
-    const content = e.target.nextElementSibling;
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    e.target.textContent = e.target.textContent.includes('▸') 
-      ? e.target.textContent.replace('▸', '▾') 
-      : e.target.textContent.replace('▾', '▸');
-  }
-
-  // toggle subject
-  if (e.target.classList.contains('subject-title')) {
-    const content = e.target.nextElementSibling;
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    e.target.textContent = e.target.textContent.includes('▸') 
-      ? e.target.textContent.replace('▸', '▾') 
-      : e.target.textContent.replace('▾', '▸');
-  }
-});
-
-function copyLink(button) {
-  const link = button.parentElement.querySelector('.course-link').textContent;
-  navigator.clipboard.writeText(link).then(() => {
-    const original = button.textContent;
-    button.textContent = "Copied!";
-    button.classList.add("copied");
-    setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1500);
-  });
-}
-
 
     // Reviews Carousel
     const form = document.getElementById('reviewForm');
@@ -891,11 +946,8 @@ function copyLink(button) {
       }
     ];
 
-    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    if (reviews.length === 0) {
-      reviews = [...defaultReviews];
-      localStorage.setItem('reviews', JSON.stringify(reviews));
-    }
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [...defaultReviews];
+    localStorage.setItem('reviews', JSON.stringify(reviews));
 
     function saveReviews() {
       localStorage.setItem('reviews', JSON.stringify(reviews));
@@ -905,7 +957,10 @@ function copyLink(button) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const reviewText = document.getElementById('review').value.trim();
-      if (!name || !reviewText) return;
+      if (!name || !reviewText) {
+        alert('Please fill out both name and review fields.');
+        return;
+      }
       const review = { name, reviewText };
       reviews.unshift(review);
       if (reviews.length > 100) reviews.pop();
@@ -935,7 +990,7 @@ function copyLink(button) {
         reviewCard.style.transform = 'translateY(8px)';
         reviewCard.style.transition = 'all 0.4s ease';
         reviewCard.innerHTML = `
-          <img src="https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(review.name)}" alt="User Avatar">
+          <img src="https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(review.name)}" alt="Avatar of ${review.name}">
           <div class="content">
             <strong>${review.name}</strong>
             <p><span class="quote">"</span>${review.reviewText}<span class="quote">"</span></p>
@@ -959,7 +1014,7 @@ function copyLink(button) {
         reviewsDiv.style.transform = 'translateX(0)';
         return;
       }
-      const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 140;
+      const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 148;
       const containerWidth = reviewsDiv.parentElement.offsetWidth;
       const visibleCards = Math.floor(containerWidth / cardWidth);
       const maxIndex = Math.max(0, reviews.length - visibleCards);
@@ -974,13 +1029,14 @@ function copyLink(button) {
       currentIndex--;
       updateCarousel();
     });
+
     nextBtn.addEventListener('click', () => {
       currentIndex++;
       updateCarousel();
     });
 
     let autoSlideInterval = setInterval(() => {
-      const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 140;
+      const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 148;
       const containerWidth = reviewsDiv.parentElement.offsetWidth;
       const visibleCards = Math.floor(containerWidth / cardWidth);
       if (reviews.length > visibleCards && currentIndex < reviews.length - visibleCards) {
@@ -996,7 +1052,7 @@ function copyLink(button) {
       clearInterval(autoSlideInterval);
       updateCarousel();
       autoSlideInterval = setInterval(() => {
-        const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 140;
+        const cardWidth = window.innerWidth <= 768 ? window.innerWidth - 40 : 148;
         const containerWidth = reviewsDiv.parentElement.offsetWidth;
         const visibleCards = Math.floor(containerWidth / cardWidth);
         if (reviews.length > visibleCards && currentIndex < reviews.length - visibleCards) {
