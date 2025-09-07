@@ -714,103 +714,136 @@ header p {
     function currentSlide(n) { showSlide(slideIndex = n); }
     function autoAdvance() { setInterval(() => { plusSlides(1); }, 4000); }
 
-    // Courses Accordion
-    const semesters = [
-      {
-        name: "Semester 1",
-        subjects: [
-          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
-          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
-          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
-          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-        ]
-      },
-      {
-        name: "Semester 2",
-        subjects: [
-          { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
-          { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
-          { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
-          { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-        ]
-      }
-    ];
+   // Courses Accordion
+const semesters = [
+  {
+    name: "Semester 1",
+    subjects: [
+      { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+      { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+      { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+      { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+    ]
+  },
+  {
+    name: "Semester 2",
+    subjects: [
+      { name: "📘 Basics of Accounting", link: "https://t.me/ZerotoRequestbot1", demo: "https://www.youtube.com/embed/2eebptXfEvw" },
+      { name: "📗 Business Studies", link: "https://t.me/ZerotoRequestbot2", demo: "https://www.youtube.com/embed/VYOjWnS4cMY" },
+      { name: "📕 Economics", link: "https://t.me/ZerotoRequestbot3", demo: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+      { name: "📙 Introduction to Finance", link: "https://t.me/ZerotoRequestbot4", demo: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+    ]
+  }
+];
 
-    const container = document.getElementById("curriculum-container");
-    semesters.forEach((sem) => {
-      const semDiv = document.createElement("div");
-      semDiv.className = "semester";
-      const title = document.createElement("h3");
-      title.className = "semester-title";
-      title.textContent = `${sem.name} ▸`;
-      semDiv.appendChild(title);
-      const content = document.createElement("div");
-      content.className = "semester-content";
-      sem.subjects.forEach((sub) => {
-        const row = document.createElement("div");
-        row.className = "course-row";
-        const info = document.createElement("div");
-        info.className = "course-info";
-        const name = document.createElement("span");
-        name.className = "course-name";
-        name.textContent = sub.name;
-        const openBtn = document.createElement("a");
-        openBtn.href = sub.link;
-        openBtn.target = "_blank";
-        openBtn.className = "btn btn-big open-btn";
-        openBtn.textContent = "Open in Telegram";
-        const linkSpan = document.createElement("span");
-        linkSpan.className = "course-link";
-        linkSpan.textContent = sub.link;
-        const copyBtn = document.createElement("button");
-        copyBtn.className = "btn btn-big copy-btn";
-        copyBtn.textContent = "Copy Link";
-        copyBtn.onclick = () => copyLink(copyBtn);
-        info.appendChild(name);
-        info.appendChild(openBtn);
-        info.appendChild(linkSpan);
-        info.appendChild(copyBtn);
-        let videoDiv = null;
-        if (sub.demo) {
-          videoDiv = document.createElement("div");
-          videoDiv.className = "course-video";
-          const iframe = document.createElement("iframe");
-          iframe.width = "240";
-          iframe.height = "135";
-          iframe.src = sub.demo;
-          iframe.frameBorder = "0";
-          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-          iframe.allowFullscreen = true;
-          videoDiv.appendChild(iframe);
-        }
-        row.appendChild(info);
-        if (videoDiv) row.appendChild(videoDiv);
-        content.appendChild(row);
-      });
-      semDiv.appendChild(content);
-      container.appendChild(semDiv);
-    });
+const container = document.getElementById("curriculum-container");
 
-    document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
-    document.addEventListener("click", e => {
-      if (e.target.classList.contains('semester-title')) {
-        const content = e.target.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        e.target.textContent = e.target.textContent.includes('▸') 
-          ? e.target.textContent.replace('▸', '▾') 
-          : e.target.textContent.replace('▾', '▸');
-      }
-    });
+semesters.forEach((sem) => {
+  const semDiv = document.createElement("div");
+  semDiv.className = "semester";
 
-    function copyLink(button) {
-      const link = button.parentElement.querySelector('.course-link').textContent;
-      navigator.clipboard.writeText(link).then(() => {
-        const original = button.textContent;
-        button.textContent = "Copied!";
-        button.classList.add("copied");
-        setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1500);
-      });
+  const title = document.createElement("h3");
+  title.className = "semester-title";
+  title.textContent = `${sem.name} ▸`;
+  semDiv.appendChild(title);
+
+  const content = document.createElement("div");
+  content.className = "semester-content";
+
+  sem.subjects.forEach((sub) => {
+    const row = document.createElement("div");
+    row.className = "course-row";
+
+    // subject heading
+    const subHeading = document.createElement("h4");
+    subHeading.className = "subject-title";
+    subHeading.textContent = `${sub.name} ▸`;
+
+    // hidden subject details
+    const subContent = document.createElement("div");
+    subContent.className = "subject-content";
+
+    const info = document.createElement("div");
+    info.className = "course-info";
+
+    const openBtn = document.createElement("a");
+    openBtn.href = sub.link;
+    openBtn.target = "_blank";
+    openBtn.className = "btn btn-big open-btn";
+    openBtn.textContent = "Open in Telegram";
+
+    const linkSpan = document.createElement("span");
+    linkSpan.className = "course-link";
+    linkSpan.textContent = sub.link;
+
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "btn btn-big copy-btn";
+    copyBtn.textContent = "Copy Link";
+    copyBtn.onclick = () => copyLink(copyBtn);
+
+    info.appendChild(openBtn);
+    info.appendChild(linkSpan);
+    info.appendChild(copyBtn);
+
+    subContent.appendChild(info);
+
+    if (sub.demo) {
+      const videoDiv = document.createElement("div");
+      videoDiv.className = "course-video";
+      const iframe = document.createElement("iframe");
+      iframe.width = "240";
+      iframe.height = "135";
+      iframe.src = sub.demo;
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      videoDiv.appendChild(iframe);
+      subContent.appendChild(videoDiv);
     }
+
+    row.appendChild(subHeading);
+    row.appendChild(subContent);
+    content.appendChild(row);
+  });
+
+  semDiv.appendChild(content);
+  container.appendChild(semDiv);
+});
+
+// hide everything by default
+document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
+document.querySelectorAll('.subject-content').forEach(c => c.style.display = 'none');
+
+// toggle semester
+document.addEventListener("click", e => {
+  if (e.target.classList.contains('semester-title')) {
+    const content = e.target.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    e.target.textContent = e.target.textContent.includes('▸') 
+      ? e.target.textContent.replace('▸', '▾') 
+      : e.target.textContent.replace('▾', '▸');
+  }
+
+  // toggle subject
+  if (e.target.classList.contains('subject-title')) {
+    const content = e.target.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    e.target.textContent = e.target.textContent.includes('▸') 
+      ? e.target.textContent.replace('▸', '▾') 
+      : e.target.textContent.replace('▾', '▸');
+  }
+});
+
+function copyLink(button) {
+  const link = button.parentElement.querySelector('.course-link').textContent;
+  navigator.clipboard.writeText(link).then(() => {
+    const original = button.textContent;
+    button.textContent = "Copied!";
+    button.classList.add("copied");
+    setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1500);
+  });
+}
+
 
     // Reviews Carousel
     const form = document.getElementById('reviewForm');
