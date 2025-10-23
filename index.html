@@ -234,83 +234,7 @@
     }
     .cta a:hover { transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
 
-    /* CURRICULUM */
-    .curriculum {
-      max-width: 900px;
-      margin: 15px auto;
-      padding: 0 12px;
-    }
-    .semester { margin-bottom: 20px; }
-    .semester-title {
-      cursor: pointer;
-      font-size: 1.3em;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #fff;
-      background: linear-gradient(90deg, #3498db, #9b59b6);
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background 0.3s;
-      user-select: none;
-    }
-    .semester-title:hover {
-      background: linear-gradient(90deg, #2980b9, #8e44ad);
-    }
-    .semester-content { margin-top: 8px; }
-    .course-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      background: #f5f6fa;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .course-row:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-    }
-    .course-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      flex: 1;
-    }
-    .course-name { font-weight: 600; color: #2c3e50; font-size: 0.9rem; }
-    .course-link { font-size: 0.75em; color: #7f8c8d; word-break: break-all; }
-    .btn {
-      padding: 4px 10px;
-      font-size: 0.75em;
-      font-weight: 500;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      color: #fff;
-      text-decoration: none;
-      line-height: 1.2em;
-      transition: all 0.3s ease;
-      display: inline-block;
-      width: fit-content;
-    }
-    .btn-big {
-      padding: 8px 16px;
-      font-size: 0.9em;
-      border-radius: 6px;
-    }
-    .btn:hover { transform: scale(1.05); }
-    .open-btn { background: linear-gradient(90deg, #1abc9c, #16a085); }
-    .open-btn:hover { background: linear-gradient(90deg, #16a085, #1abc9c); }
-    .copy-btn { background: linear-gradient(90deg, #e67e22, #d35400); }
-    .copy-btn:hover { background: linear-gradient(90deg, #d35400, #e67e22); }
-    .copy-btn.copied { background: linear-gradient(90deg, #f1c40f, #f39c12); }
-    .course-video iframe { border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    @media (max-width: 700px) {
-      .course-row { flex-direction: column; }
-      .course-video iframe { width: 100%; height: 180px; }
-    }
-
+    
     /* REVIEWS SECTION */
     .reviews {
       max-width: 900px;
@@ -677,47 +601,6 @@
  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  <!-- WRAPPER -->
   <section style="display: flex; justify-content: center; align-items: stretch; gap: 20px; flex-wrap: wrap; max-width: 800px; margin: 30px auto;">
     <!-- ENROLLMENT STEPS -->
@@ -733,9 +616,9 @@
       <div class="cta" style="display: flex; flex-direction: column; gap: 12px;">
         <a href="join.pdf" target="_blank" style="display:inline-block;background:#2196F3;color:#fff;padding:8px 16px;border-radius:5px;text-decoration:none;font-size:0.9em;margin-right:10px;">👀 View PDF</a>
         <a href="join.pdf" download style="display:inline-block;background:#4CAF50;color:#fff;padding:8px 16px;border-radius:5px;text-decoration:none;font-size:0.9em;">📄 Download PDF</a>
-        <a href="https://drive.google.com/uc?export=download&id=11bQRT1DYky_lqVxkSN6v1XqH4owxNQ4n" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 6px; background: #0088cc; color: #fff; padding: 8px 16px; font-size: 0.9em; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.3s;">
+        <a href=" https://drive.google.com/uc?export=download&id=11IXKY0MvTrGFjKHFSAycc37qXxJRpbJN" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 6px; background: #0088cc; color: #fff; padding: 8px 16px; font-size: 0.9em; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.3s;">
           <img src="icon.png" alt="Zeroto" width="24" height="24" />
-          Download Zeroto App
+          Download Zeroto SGOU App
         </a>
       </div>
     </div>
@@ -856,238 +739,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Courses Accordion
-    const semesters = [
-      {
-        name: "Semester 1",
-        subjects: [
-      { name: "📘 2025 Adm.English for Communication", link: "https://t.me/+sJThes8PE-UxMDk1", demo: "" },
-      { name: "📗 2025 Adm.Historical Tourism", link: "https://t.me/+FWdZqsEfTu04NGI9", demo: "" },
-      { name: "📕 2025 Adm.Introduction to Sociology", link: "https://t.me/+DBWugE7llL05ZTA1", demo: "" },
-      { name: "📙 2025 Adm.Computer System and Internet technology", link: "https://t.me/+WiltEipCmKQ5MzM1", demo: "" },
-      { name: "📘 2025 Adm.Social Formation In World History", link: "https://t.me/+LJZ1Upyu5J45NGVl", demo: "" },
-    ]
-      },
-      {
-        name: "Semester 2",
-        subjects: [
-          
-        ]
-      },
-      {
-        name: "Semester 3",
-        subjects: [
-      { name: "📘 2024 Adm.Classical Sociological Thinkers", link: "https://t.me/+zSME4zOd0VBhNDZl", demo: "" },
-      { name: "📗 2024 Adm.Democracy and Development", link: "https://t.me/+8VkmrRvVC81kNTU1", demo: "" },
-      { name: "📕 2024 Adm.Humanism and Logic", link: "https://t.me/+Xy1zXQajGREzMDFl", demo: "" },
-      { name: "📙 2024 Adm.Prayogika malayalam", link: "https://t.me/+L0biMr680MgxNWI1", demo: "" },
-      { name: "📘 2024 Adm.Mahatma Gandhi", link: "https://t.me/+Ke4JEaTSQcBlMDJl", demo: "" },
-      { name: "📗 2024 Adm.Financial Literacy", link: "https://t.me/+RfeIGz7XD1o1NWQ1", demo: "" },
-    ]
-      },
-      {
-        name: "Semester 4",
-        subjects: [
-      { name: "📘 2023 Adm.History of Economic Doctrines", link: "https://t.me/+Wkjbq5iD5QJiNGM9", demo: "" },
-      { name: "📗 2023 Adm.Population Studies", link: "https://t.me/+IsCfmgg68g00OGU1", demo: "" },
-      { name: "📕 2023 Adm.Environmental Sociology", link: "https://t.me/+2Ng13mi1C8ViMDg9", demo: "" },
-      { name: "📙 2023 Adm.Society In India", link: "https://t.me/+YnQwXPrqwf05MDU1", demo: "" },
-      { name: "📘 2023 Adm.മലയാള സാഹിത്യ മാത്ൃകകൾ", link: "https://t.me/+lBBY6dYKclUyOTdl", demo: "" },
-    ]
-      },
-      {
-        name: "Semester 5",
-        subjects: [
-                 ]
-      },
-      {
-        name: "Semester 6",
-        subjects:  [
-                 ]
-        
-      },
-      {
-        name: "Semester 7",
-        subjects: [
-          
-        ]
-      },
-      {
-        name: "Semester 8",
-        subjects: [
-          
-        ]
-      }
-    ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const container = document.getElementById("curriculum-container");
-
-    semesters.forEach((sem) => {
-      const semDiv = document.createElement("div");
-      semDiv.className = "semester";
-
-      const title = document.createElement("h3");
-      title.className = "semester-title";
-      title.textContent = `${sem.name} ▸`;
-      semDiv.appendChild(title);
-
-      const content = document.createElement("div");
-      content.className = "semester-content";
-
-      sem.subjects.forEach((sub) => {
-        const row = document.createElement("div");
-        row.className = "course-row";
-
-        const subHeading = document.createElement("h4");
-        subHeading.className = "subject-title";
-        subHeading.textContent = `${sub.name} ▸`;
-
-        const subContent = document.createElement("div");
-        subContent.className = "subject-content";
-
-        const info = document.createElement("div");
-        info.className = "course-info";
-
-        const openBtn = document.createElement("a");
-        openBtn.href = sub.link;
-        openBtn.target = "_blank";
-        openBtn.className = "btn btn-big open-btn";
-        openBtn.textContent = "Open in Telegram";
-
-        const linkSpan = document.createElement("span");
-        linkSpan.className = "course-link";
-        linkSpan.textContent = sub.link;
-
-        const copyBtn = document.createElement("button");
-        copyBtn.className = "btn btn-big copy-btn";
-        copyBtn.textContent = "Copy Link";
-        copyBtn.onclick = () => copyLink(copyBtn);
-
-        info.appendChild(openBtn);
-        info.appendChild(linkSpan);
-        info.appendChild(copyBtn);
-
-        subContent.appendChild(info);
-
-        if (sub.demo) {
-          const videoDiv = document.createElement("div");
-          videoDiv.className = "course-video";
-          const iframe = document.createElement("iframe");
-          iframe.width = "240";
-          iframe.height = "135";
-          iframe.src = sub.demo;
-          iframe.frameBorder = "0";
-          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-          iframe.allowFullscreen = true;
-          videoDiv.appendChild(iframe);
-          subContent.appendChild(videoDiv);
-        }
-
-        row.appendChild(subHeading);
-        row.appendChild(subContent);
-        content.appendChild(row);
-      });
-
-      semDiv.appendChild(content);
-      container.appendChild(semDiv);
-    });
-
-    document.querySelectorAll('.semester-content').forEach(c => c.style.display = 'none');
-    document.querySelectorAll('.subject-content').forEach(c => c.style.display = 'none');
-
-    document.addEventListener("click", e => {
-      if (e.target.classList.contains('semester-title')) {
-        const content = e.target.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        e.target.textContent = e.target.textContent.includes('▸') 
-          ? e.target.textContent.replace('▸', '▾') 
-          : e.target.textContent.replace('▾', '▸');
-      }
-
-      if (e.target.classList.contains('subject-title')) {
-        const content = e.target.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        e.target.textContent = e.target.textContent.includes('▸') 
-          ? e.target.textContent.replace('▸', '▾') 
-          : e.target.textContent.replace('▾', '▸');
-      }
-    });
-
-    function copyLink(button) {
-      const link = button.parentElement.querySelector('.course-link').textContent;
-      navigator.clipboard.writeText(link).then(() => {
-        const original = button.textContent;
-        button.textContent = "Copied!";
-        button.classList.add("copied");
-        setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1500);
-      });
-    }
 
     // Reviews Carousel
     const form = document.getElementById('reviewForm');
@@ -1245,6 +896,7 @@
   </script>
 </body>
 </html>
+
 
 
 
